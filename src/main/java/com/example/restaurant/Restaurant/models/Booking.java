@@ -2,11 +2,10 @@ package com.example.restaurant.Restaurant.models;
 
 
 import javax.persistence.*;
-import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "bookings")
+@javax.persistence.Table(name = "bookings")
 public class Booking {
 
     @Id
@@ -22,9 +21,9 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name="table_id", nullable=false)
-    private com.example.restaurant.Restaurant.models.Table table;
+    private Table table;
 
-    public Booking(Date date, Customer customer, com.example.restaurant.Restaurant.models.Table table) {
+    public Booking(Date date, Customer customer, Table table) {
         this.date = date;
         this.customer = customer;
         this.table = table;
