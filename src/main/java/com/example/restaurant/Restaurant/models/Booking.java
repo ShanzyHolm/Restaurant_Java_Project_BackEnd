@@ -1,6 +1,9 @@
 package com.example.restaurant.Restaurant.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,10 +18,12 @@ public class Booking {
     @Column(name = "date")
     private Date date;
 
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=false)
     private Customer customer;
 
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name="table_id", nullable=false)
     private Table table;

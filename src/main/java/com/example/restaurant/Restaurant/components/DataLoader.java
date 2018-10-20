@@ -43,6 +43,14 @@ public class DataLoader implements ApplicationRunner {
             e.printStackTrace();
         }
 
+        String newDate1 = "26-12-18";
+        Date date1 = null;
+        try {
+            date1 =df.parse(newDate1);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         Customer customer1 = new Customer("Customer1", "123");
         customerRepository.save(customer1);
 
@@ -70,7 +78,7 @@ public class DataLoader implements ApplicationRunner {
         Booking booking2 = new Booking(date, customer1, table2);
         bookingRepository.save(booking2);
 
-        Booking booking3 = new Booking(date, customer2, table3);
+        Booking booking3 = new Booking(date1, customer2, table3);
         bookingRepository.save(booking3);
 
         Booking booking4 = new Booking(date, customer3, table1);
@@ -79,7 +87,7 @@ public class DataLoader implements ApplicationRunner {
         Booking booking5 = new Booking(date, customer3, table2);
         bookingRepository.save(booking5);
 
-        Booking booking6 = new Booking(date, customer3, table3);
+        Booking booking6 = new Booking(date1, customer3, table3);
         bookingRepository.save(booking6);
 
         Booking booking7 = new Booking(date, customer3, table4);
