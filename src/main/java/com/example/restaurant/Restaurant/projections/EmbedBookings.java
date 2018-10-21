@@ -10,6 +10,6 @@ import java.util.List;
 public interface EmbedBookings {
     long getId();
     String getName();
-    String number();
+    String getNumber();
     List<Booking> getBookings();
 }
