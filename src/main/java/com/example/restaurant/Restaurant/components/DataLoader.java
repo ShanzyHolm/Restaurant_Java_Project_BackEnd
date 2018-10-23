@@ -51,13 +51,13 @@ public class DataLoader implements ApplicationRunner {
             e.printStackTrace();
         }
 
-        Customer customer1 = new Customer("Riley Quinn", "123");
+        Customer customer1 = new Customer("Riley Quinn", "07700 900961");
         customerRepository.save(customer1);
 
-        Customer customer2 = new Customer("Jocelyn Xavier", "123");
+        Customer customer2 = new Customer("Jocelyn Xavier", "07700 900155");
         customerRepository.save(customer2);
 
-        Customer customer3 = new Customer("Gail Brooke", "123");
+        Customer customer3 = new Customer("Gail Brooke", "0141 496 0888");
         customerRepository.save(customer3);
 
         Table table1 = new Table("Table1", 4);
