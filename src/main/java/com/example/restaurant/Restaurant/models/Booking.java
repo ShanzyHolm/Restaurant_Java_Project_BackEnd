@@ -1,12 +1,14 @@
 package com.example.restaurant.Restaurant.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "bookings")
+@javax.persistence.Table(name = "bookings")
 public class Booking {
 
     @Id
@@ -16,15 +18,17 @@ public class Booking {
     @Column(name = "date")
     private Date date;
 
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=false)
     private Customer customer;
 
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name="table_id", nullable=false)
-    private com.example.restaurant.Restaurant.models.Table table;
+    private Table table;
 
-    public Booking(Date date, Customer customer, com.example.restaurant.Restaurant.models.Table table) {
+    public Booking(Date date, Customer customer, Table table) {
         this.date = date;
         this.customer = customer;
         this.table = table;
